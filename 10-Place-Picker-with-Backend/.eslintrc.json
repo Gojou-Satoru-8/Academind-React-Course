@@ -1,0 +1,22 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "extends": ["airbnb", "airbnb/hooks", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "prettier/prettier": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "warn",
+    "react/no-unescaped-entities": "warn",
+    "func-names": "off",
+    "jsx-a11y/img-redundant-alt": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "no-restricted-syntax": "off",
+    "no-plusplus": "off",
+    "react/jsx-no-bind": "off"
+  }
+}
