@@ -1,12 +1,13 @@
+/* eslint-disable consistent-return */
 import fs from "node:fs/promises";
 
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import express from "express";
 
 const app = express();
 
 app.use(express.static("images"));
-app.use(bodyParser.json());
+app.use(express.json());
 
 // CORS
 
@@ -36,6 +37,7 @@ app.get("/user-places", async (req, res) => {
 
 app.put("/user-places", async (req, res) => {
   const { places } = req.body;
+  console.log(places);
 
   await fs.writeFile("./data/user-places.json", JSON.stringify(places));
 
@@ -50,6 +52,7 @@ app.use((req, res, next) => {
   res.status(404).json({ message: "404 - Not Found" });
 });
 
-app.listen(3000, "0.0.0.0", () => {
+app.listen(3000, "192.168.1.3", () => {
+  // Here, 192.168.1.3 is your current IP address for other devices, like your phone or iPad to find on the same network.
   console.log("Server's up! Running on port 3000");
 });
